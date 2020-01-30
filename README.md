@@ -20,3 +20,8 @@
                       #  If your os ıs not using apt-get you dowload this required         #
                       #                proxychains & curl & tor service                    #
                       ###################################################################### 
+                      
+           
+![](Screenshot_20200130-223728_Termux.jpg)
+![](Screenshot_20200130-223741_Termux.jpg)
+![](Screenshot_20200130-223806_Termux.jpg)
