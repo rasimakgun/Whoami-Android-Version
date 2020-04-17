@@ -76,7 +76,7 @@ if bash Tproxy.sh -t > /dev/null ; then
     echo "${green} [OK]"
 else echo  "${RED} [FAIL]" && exit 1
 fi
-echo -n "${RED} * Your Whoami ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
+echo -n "${RED} ~ Your Whoami ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
 echo " "
 ############################### Stop Whoami ##############################################
 elif [[ $option == "2" ]]; then 
@@ -97,7 +97,7 @@ if bash Tproxy.sh -c > /dev/null && service network-manager restart ; then
     echo "${green} [OK]" 
 else echo  "${RED} [FAIL]" && exit 1
 fi
-echo -n "${RED} * Your current ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
+echo -n "${RED} ~ Your current ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
 echo " "
 ############################# Restart Whoami ##############################################
 elif [[ $option == "3" ]]; then 
@@ -125,7 +125,7 @@ if bash Tproxy.sh -c > /dev/null && bash Tproxy.sh -t > /dev/null ; then
     echo "${green} [OK]" 
 else echo  "${RED} [FAIL]" && exit 1
 fi
-echo -n "${RED} * Your Whoami ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
+echo -n "${RED} ~ Your Whoami ip :" && echo -n "${green} "   &&  curl icanhazip.com 2> /dev/null 
 fi
 echo " "
 ############################# Non-rooted #######################################################
@@ -172,7 +172,7 @@ else echo  "${RED} [FAIL]" && exit 1
 fi
 echo -n "${purple} * TOR starting"
 if service tor start > /dev/null ; then
-    echo "${green} [OK]" && echo "${green} * Whoami has been started " &&  rm -fr /etc/proxychains.conf
+    echo "${green} [OK]" && rm -fr /etc/proxychains.conf
 touch  /etc/proxychains.conf
 echo "# proxychains.conf  VER 3.1
 #
@@ -237,13 +237,18 @@ tcp_connect_time_out 8000
 # add proxy here ...
 # meanwile
 # defaults set to ""tor""
-socks4 	127.0.0.1 9050" > /etc/proxychains.conf  
+socks4 	127.0.0.1 9050" > /etc/proxychains.conf
+sudo rm -fr /etc/alternatives/proxychains
+cd data && cp proxychains /etc/alternatives
+chattr -i /etc/alternatives/proxychains
+chmod +777 /etc/alternatives/proxychains
+echo -n "${RED} ~ Your Whoami ip : " &&  echo -n "${green} " && proxychains curl icanhazip.com 2> /dev/null 
 for (( ; ; ))
 do
 green=`tput setaf 46`
 reset=`tput sgr0`
 echo -n "${green}> ${reset}" && read Pchan
-proxychains $Pchan
+proxychains $Pchan 2>/dev/null
 done
 else echo  "${RED} [FAIL]" && exit 1
 fi
