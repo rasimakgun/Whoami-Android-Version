@@ -243,7 +243,7 @@ do
 green=`tput setaf 46`
 reset=`tput sgr0`
 echo -n "${green}> ${reset}" && read Pchan
-proxychains clear && $Pchan
+proxychains $Pchan
 done
 else echo  "${RED} [FAIL]" && exit 1
 fi
