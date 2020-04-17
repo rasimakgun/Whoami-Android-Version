@@ -12,5 +12,5 @@ Instagram : https://www.instagram.com/_omerr.dogan_/  <br/>
 E-mail    : omerdgn739@gmail.com  <br/>
 Udemy     : https://www.udemy.com/user/omer-dogan-15/  <br/>
           
-![](.whoami-av.gif)
+![](.whoami.gif)
 
