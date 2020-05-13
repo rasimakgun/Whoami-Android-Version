@@ -6,11 +6,6 @@ After downloading, open a terminal and enter the command "*sudo whoami-android-v
 ## Do not forget !
 [-] Whoami accepts no liability for illegal use <br/>
 [-] Whoami is not magic, everyone knows that there is no hundred percent security on the Internet, the tool can not make you completely anonymous, but do not doubt that you can do it at the highest level. 
-## Bug report
-If you find any bug, please contact me at the addresses below.  <br/>
-Instagram : https://www.instagram.com/_omerr.dogan_/  <br/>
-E-mail    : omerdgn739@gmail.com  <br/>
-Udemy     : https://www.udemy.com/user/omer-dogan-15/  <br/>
-          
+         
 ![](.whoami.gif)
 
